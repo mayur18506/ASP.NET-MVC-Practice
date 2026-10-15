@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("Username")
+    @:
+    @Html.TextBox("Username", "", new { @class = "form-control" })
+
+
+    <br />
+    <br />
+
+    @Html.Label("Password")
+    @:&nbsp;
+    @Html.Password("pass", "", new { @class = "form-control" })
+
+    <br />
+    <br />
+
+    @Html.Label("Male")
+    @:&nbsp;
+    @Html.RadioButton("Gender", "Male", true)
+
+    @Html.Label("Female")
+    @:&nbsp;
+    @Html.RadioButton("Gender", "Female")
+
+    <br />
+    <br />
+
+    @Html.Label("Select country")
+    @:&nbsp;
+    @Html.DropDownList(
+        "CountryList",
+        new SelectList(new[] { "India", "Pakistan", "America", "London" }),
+        "Select",
+        new { @class = "form-control" }
+    )
+
+    <br />
+    <br />
+
+    @Html.Label("Comments")
+    @:&nbsp;
+    @Html.TextArea(
+        "CommentsArea",
+        "",
+        5,
+        20,
+        new { @class = "form-control" }
+    )
+
+    <br />
+    <br />
+
+    @Html.CheckBox("AcceptTerms")
+    @:&nbsp;
+    @Html.Label("I accept the terms")
+
+    @Html.Hidden("id")
+
+    <br />
+    <br />
+
+    <input type="submit" value="Submit" class="form-control" />
+
+
+}

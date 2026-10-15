@@ -1,0 +1,70 @@
+﻿@model _21.Data_Annotation.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(model => model.EmployeeId) &nbsp; @Html.TextBoxFor(model => model.EmployeeId, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmployeeName) &nbsp; @Html.TextBoxFor(model => model.EmployeeName, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmployeeAge) &nbsp; @Html.TextBoxFor(model => model.EmployeeAge, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeAge, "", new { @class = "text-danger" })
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmployeeGender) &nbsp; @Html.TextBoxFor(model => model.EmployeeGender, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeGender, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmployeeEmail) &nbsp; @Html.TextBoxFor(model => model.EmployeeEmail, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeEmail, "", new { @class = "text-danger" })
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmployeeePassword) &nbsp; @Html.EditorFor(model => model.EmployeeePassword, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmployeeePassword, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmpConfirmPassword) &nbsp; @Html.EditorFor(model => model.EmpConfirmPassword, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpConfirmPassword, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmpOrganizationName) &nbsp; @Html.TextBoxFor(model => model.EmpOrganizationName, "", new { @class = "form-control", @Value = "ABC ORGANIZATION", @readonly = true })
+        @*@Html.ValidationMessageFor(model => model.EmpOrganizationName, "", new { @class = "text-danger" })*@
+
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmpAddress) &nbsp; @Html.EditorFor(model => model.EmpAddress, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpAddress, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmpJoiningDate) &nbsp; @Html.EditorFor(model => model.EmpJoiningDate, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpJoiningDate, "", new { @class = "text-danger" })
+
+    </p>
+    <p>
+
+        @Html.LabelFor(model => model.EmpJoiningTime) &nbsp; @Html.EditorFor(model => model.EmpJoiningTime, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpJoiningTime, "", new { @class = "text-danger" })
+
+    </p>
+    <input type="submit" value="Submit" class="btn btn-info" />
+    @Html.Raw(ViewData["SuccessMessage"])
+}

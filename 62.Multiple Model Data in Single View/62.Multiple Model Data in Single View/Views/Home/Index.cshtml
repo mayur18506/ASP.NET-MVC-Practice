@@ -1,0 +1,61 @@
+﻿@using _62.Multiple_Model_Data_in_Single_View.Models
+@model MultiModelData
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h1>Students Data</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <th>CLASS</th>
+            <th>FEES</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.student)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.name</td>
+                <td>@item.gender</td>
+                <td>@(item.@class)</td>
+                <td>@item.fees</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1>Teachers Data</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <th>QUALIIONFICAT</th>
+            <th>SALARY</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.teacher)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.name</td>
+                <td>@item.gender</td>
+                <td>@item.qualification</td>
+                <td>@item.salary</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
